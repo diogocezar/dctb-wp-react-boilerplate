@@ -34,6 +34,7 @@ class Home extends Component {
 	}
 	render() {
 		let movies = this.state.movies.map((movie, i) => {
+			console.log(movie)
 			return(
 				<div key={i}>
 					<h2>Titile</h2>
@@ -44,6 +45,7 @@ class Home extends Component {
 					<p>{movie.acf.ratting}</p>
 					<h4>Description</h4>
 					<p>{movie.acf.description}</p>
+					<img src={movie.acf.image}/>
 				</div>
 			)
 		})

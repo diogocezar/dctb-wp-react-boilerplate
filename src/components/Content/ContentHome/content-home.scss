@@ -1,0 +1,60 @@
+@import '../../../assets/styles/imports/_imports.scss';
+
+#content-home {
+    h2,
+    h3 {
+        font-family: $font-secondary;
+        color: $color-light;
+        text-align: center;
+    }
+    h2 {
+        font-size: 6.5rem;
+        @include responsive(s1) {
+            font-size: 5.5rem;
+        }
+        @include responsive(s2) {
+            font-size: 5rem;
+        }
+        @include responsive(s3) {
+            font-size: 4rem;
+        }
+        @include responsive(s4) {
+            font-size: 3rem;
+        }
+        @include responsive(s5) {
+            font-size: 2.5rem;
+        }
+    }
+    h3 {
+        font-size: 4rem;
+        margin-bottom: 4rem;
+        @include responsive(s1) {
+            font-size: 3.5rem;
+        }
+        @include responsive(s2) {
+            font-size: 3rem;
+        }
+        @include responsive(s3) {
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+        @include responsive(s5) {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+    }
+    h4 {
+        font-family: $font-primary;
+        color: $color-light;
+        text-align: center;
+        .hl {
+            color: $color-light-purple;
+        }
+        @include responsive(s3) {
+            font-size: 1.2rem;
+        }
+    }
+    button {
+        margin-top: 4rem;
+    }
+}

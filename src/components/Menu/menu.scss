@@ -1,0 +1,328 @@
+@import '../../assets/styles/includes/_fonts-styles.scss';
+@import '../../assets/styles/includes/_mixins.scss';
+@import '../../assets/styles/includes/_colors.scss';
+@import '../../assets/styles/includes/_sizes.scss';
+
+#header-menu {
+	a{
+		cursor: pointer;
+	}
+	.a-header {
+		position: relative;
+		float: left;
+		max-width: 190px;
+		svg {
+			height: 60px;
+			margin-top: 5px;
+			@include responsive(s1) {
+				height: 60px;
+				margin-top: 5px;
+			}
+			@include responsive(s2) {
+				height: 50px;
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+			@include responsive(s4) {
+				height: 50px;
+				margin-top: 3px;
+				margin-left: 10px;
+				.st10{
+					display:none;
+				}
+			}
+		}
+	}
+	top: 0px;
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	z-index: 999;
+	background-color: $color-dark-purple;
+	box-shadow: -2px -3px 20px 3px rgba(34, 34, 59, 0.5);
+	@include transition(.3s);
+	@include responsive(s4) {
+		height: 60px;
+	}
+	header {
+		height: 70px;
+		position: relative;
+		float: left;
+		@include responsive(s4) {
+			height: 60px;
+		}
+		@include responsive(s2) {
+			position: absolute;
+			left: 0;
+		}
+	}
+	.hamburguer {
+		width: 40px;
+		position: fixed;
+		@include transition(.25s);
+		top: 15px;
+		right: 15px;
+		height: 40px;
+		background: transparent;
+		border-radius: 50%;
+		border: 1px solid $color-light;
+		display: block;
+		cursor: pointer;
+		@include responsive(s4) {
+			top: 10px;
+		}
+		&:after,
+		&:before,
+		span {
+			content: " ";
+			width: 14px;
+			height: 1px;
+			display: block;
+			background: $color-light-purple;
+			border-radius: 0px;
+			@include transition(.25s);
+			margin-left: 12px;
+		}
+		&:before {
+			margin-top: 11px;
+		}
+		span {
+			position: relative;
+			margin-top: 7px;
+			margin-bottom: 7px;
+			@include transition(.25s);
+		}
+		&.active {
+			&:after {
+				-webkit-transform: rotate(45deg) translate(-5px, -6px);
+				-moz-transform: rotate(45deg) translate(-5px, -6px);
+				-ms-transform: rotate(45deg) translate(-5px, -6px);
+				transform: rotate(45deg) translate(-5px, -6px);
+			}
+			&:before {
+				-webkit-transform: rotate(-45deg) translate(-5px, 6px);
+				-moz-transform: rotate(-45deg) translate(-5px, 6px);
+				-ms-transform: rotate(-45deg) translate(-5px, 6px);
+				transform: rotate(-45deg) translate(-5px, 6px);
+			}
+			span {
+				@include opacity(0);
+			}
+		}
+	}
+	.active {
+		.menu-container {
+			-webkit-transform: translate(0, 0) !important;
+			-moz-transform: translate(0, 0) !important;
+			-ms-transform: translate(0, 0) !important;
+			transform: translate(0, 0) !important;
+			@include opacity(0);
+			-webkit-transition: all 0.25s 'ease-in-out' 0s !important;
+			-moz-transform: all 0.25s 'ease-in-out' 0s !important;
+			-ms-transition: all 0.25s 'ease-in-out' 0s !important;
+			transition: all 0.25s 'ease-in-out' 0s !important;
+			ul {
+				top: calc( 50% - 35px);
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%) !important;
+				-moz-transform: translate(-50%, -50%) !important;
+				-ms-transform: translate(-50%, -50%) !important;
+				transform: translate(-50%, -50%) !important;
+				li {
+					width: 100%;
+					margin-bottom: 2em;
+					a {
+						&:before {
+							display: none;
+						}
+						font-size: 2.5em !important;
+						padding: 0.25em 0 !important;
+						color: $color-dark-purple;
+						font-weight: 600;
+						margin: 0px !important;
+						padding: 0px !important;
+						line-height: 1.5em !important;
+						letter-spacing: 1px !important;
+						font-weight: 600;
+						&:hover {
+							color: $color-purple;
+						}
+						@media only screen and (max-height: 470px) {
+							font-size: 2em !important;
+						}
+						@media only screen and (max-height: 375px) {
+							font-size: 1.8em !important;
+						}
+						@media only screen and (max-height: 320px) {
+							font-size: 1.5em !important;
+						}
+					}
+				}
+				@include responsive(s4) {
+					top: calc(50% - 30px);
+				}
+			}
+		}
+	}
+	.end {
+		.menu-container {
+			ul {
+				top: calc( 50% - 35px);
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%) !important;
+				-moz-transform: translate(-50%, -50%) !important;
+				-ms-transform: translate(-50%, -50%) !important;
+				transform: translate(-50%, -50%) !important;
+				li {
+					width: 100%;
+					a {
+						&:before {
+							display: none;
+						}
+						font-size: 2.5em !important;
+						padding: 0.25em 0 !important;
+						color: $color-dark-purple;
+						font-weight: 600;
+						margin: 0px !important;
+						padding: 0px !important;
+						line-height: 1.5em !important;
+						letter-spacing: 1px !important;
+						font-weight: 600;
+						&:hover {
+							color: $color-purple;
+						}
+						@media only screen and (max-height: 470px) {
+							font-size: 2em !important;
+						}
+						@media only screen and (max-height: 375px) {
+							font-size: 1.8em !important;
+						}
+						@media only screen and (max-height: 320px) {
+							font-size: 1.5em !important;
+						}
+					}
+				}
+				@include responsive(s4) {
+					top: calc(50% - 30px);
+				}
+			}
+		}
+	}
+	.bg-shared {
+		.menu-container {
+			position: relative;
+			float: right;
+			@include responsive(s2) {
+				width: auto !important;
+			}
+			ul {
+				margin: 0;
+				padding: 0;
+				@include relative;
+				li {
+					position: relative;
+					float: left;
+					list-style: none;
+					a {
+						text-decoration: none;
+						position: relative;
+						display: block;
+						margin: 0 1.1em;
+						padding: 0.5em 0;
+						text-align: center;
+						font-weight: 500;
+						line-height: 40px;
+						font-size: 1.18em;
+						padding-top: 16px;
+						-webkit-transition: background 0.3s, color 0.3s;
+						transition: background 0.3s, color 0.3s;
+						font-family: $font-primary;
+						color: $color-light;
+						font-weight: 400;
+						margin-top: 4px;
+						&:hover {
+							text-decoration: none;
+						}
+						&:before {
+							content: '';
+							position: absolute;
+							bottom: 10px;
+							left: 0;
+							width: 100%;
+							height: 3px;
+							background: $color-light-purple;
+							-webkit-transform: scale3d(0, 5, 1);
+							transform: scale3d(0, 5, 1);
+							-webkit-transform-origin: 0% 50%;
+							transform-origin: 0% 50%;
+							-webkit-transition: -webkit-transform 0.3s;
+							transition: transform 0.3s;
+							-webkit-transition-timing-function: cubic-bezier(1, 0.68, 0.16, 0.9);
+							transition-timing-function: cubic-bezier(1, 0.68, 0.16, 0.9);
+						}
+						&:hover:before {
+							-webkit-transform: scale3d(1, 1, 1);
+							transform: scale3d(1, 1, 1);
+						}
+						@include responsive(s1) {
+							font-size: 1.05em;
+							margin: 0 1em;
+							line-height: 40px;
+							padding-top: 19px;
+						}
+						@include responsive(s2) {
+							font-size: 2.6rem !important;
+							font-weight: 400;
+							color: $color-light;
+						}
+						@include responsive(s4) {
+							font-size: 2rem !important;
+							font-weight: 400;
+						}
+					}
+				}
+			}
+			@include responsive(s2) {
+				-webkit-transform: translate(0, 110%);
+				-moz-transform: translate(0, 110%);
+				-ms-transform: translate(0, 110%);
+				transform: translate(0, 110%);
+				@include opacity(1);
+				@include transition(0.25s);
+				margin-top: 70px;
+				position: fixed;
+				height: 100vh;
+				width: 100%;
+				top: 0;
+				left: 0;
+				background-color: $color-purple;
+			}
+			@include responsive(s4) {
+				margin-top: 60px;
+			}
+		}
+	}
+	.menu-mobile {
+		.menu-container {
+			ul {
+				li {
+					a {
+						&:hover {
+							color: $color-dark-purple;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.off {
+		transform: translate3d(0, -100px, 0);
+		-webkit-transition: all 0.3s ease-in-out 0s;
+		transition: all 0.3s ease-in-out 0s;
+	}
+	&.on {
+		transform: translate3d(0, 0px, 0);
+		-webkit-transition: all 0.3s ease-in-out 0s;
+		transition: all 0.3s ease-in-out 0s;
+	}
+}

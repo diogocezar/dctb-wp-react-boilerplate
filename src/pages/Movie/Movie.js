@@ -1,15 +1,10 @@
 import React, { Component, Fragment } from 'react'
 
-// JQuery
-import $ from 'jquery'
-
 //Plugins
 import { PluginMouseWheel }     from '../../plugins/plugin-mouse-wheel'
 import { PluginNiceScroll }     from '../../plugins/plugin-nice-scroll'
-import { PluginScrollReveal }   from '../../plugins/plugin-scroll-reveal'
-import { PluginOwlCarousel }    from '../../plugins/plugin-owl-carousel'
 
-class Home extends Component {
+class Movie extends Component {
 	constructor(){
 		super()
 		this.state = {
@@ -18,10 +13,8 @@ class Home extends Component {
 	}
 	componentDidMount(){
 		this.pluginNiceScroll   = new PluginNiceScroll()
-		this.pluginScrollReveal = new PluginScrollReveal()
-		this.pluginOwlCarousel  = new PluginOwlCarousel()
 		this.pluginMouseWheel   = new PluginMouseWheel()
-		$('#loader').fadeOut()
+		document.title          = "Movies";
 		this.getData()
 	}
 	getData(lang){
@@ -39,7 +32,6 @@ class Home extends Component {
 	}
 	render() {
 		let movies = this.state.movies.map((movie, i) => {
-			console.log(movie)
 			return(
 				<div key={i}>
 					<h2>Titile</h2>
@@ -56,13 +48,13 @@ class Home extends Component {
 		})
 		return(
 			<Fragment>
-				<a href="#pt" onClick={() => this.changeLanguage('pt')} style={{'color':'red'}}>PT</a>
+				<a onClick={() => this.changeLanguage('pt')} style={{'color':'red'}}>PT</a>
 				-
-				<a href="#en" onClick={() => this.changeLanguage('en')} style={{'color':'red'}}>EN</a>
+				<a onClick={() => this.changeLanguage('en')} style={{'color':'red'}}>EN</a>
 				{movies}
 			</Fragment>
 		)
 	}
 }
 
-export default Home
+export default Movie

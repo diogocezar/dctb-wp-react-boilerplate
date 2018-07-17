@@ -1,6 +1,6 @@
-import React    from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
 // HashRouter
 
 // CSS
@@ -17,12 +17,22 @@ import registerServiceWorker from './service-worker/registerServiceWorker'
 // Rendering
 ReactDOM.render(
     <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={Movie}/>
-            <Route path="/musics" component={Music} />
-        </Switch>
+        <Fragment>
+            <header>
+                <nav>
+                    <ul>
+                        <li><Link to='/' style={{ 'color': 'red' }}>Home</Link></li>
+                        <li><Link to='/musics' style={{ 'color': 'red' }}>Musics</Link></li>
+                    </ul>
+                </nav>
+            </header>
+            <Switch>
+                <Route exact path="/" component={Movie} />
+                <Route path="/musics" component={Music} />
+            </Switch>
+        </Fragment>
     </BrowserRouter>
-    ,document.getElementById('root')
+    , document.getElementById('root')
 )
 
 registerServiceWorker()

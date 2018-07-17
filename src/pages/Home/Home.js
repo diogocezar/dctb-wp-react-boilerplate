@@ -13,7 +13,7 @@ class Home extends Component {
 	constructor(){
 		super()
 		this.state = {
-			movies: []
+			movies : []
 		}
 	}
 	componentDidMount(){
@@ -21,9 +21,11 @@ class Home extends Component {
 		this.pluginScrollReveal = new PluginScrollReveal()
 		this.pluginOwlCarousel  = new PluginOwlCarousel()
 		this.pluginMouseWheel   = new PluginMouseWheel()
-		$('#loader').fadeOut();
-		// Load Movies
-		let url = "http://localhost/dctb-wp-react-boilerplate/public/api/wp-json/wp/v2/movies"
+		$('#loader').fadeOut()
+		this.getData()
+	}
+	getData(lang){
+		let url = `http://localhost/dctb-wp-react-boilerplate/public/api/wp-json/wp/v2/movies?lang=${lang}`
 		fetch(url)
 			.then(res => res.json())
 			.then(res => {
@@ -31,6 +33,9 @@ class Home extends Component {
 					movies: res
 				})
 			})
+	}
+	changeLanguage(lang){
+		this.getData(lang)
 	}
 	render() {
 		let movies = this.state.movies.map((movie, i) => {
@@ -51,6 +56,9 @@ class Home extends Component {
 		})
 		return(
 			<Fragment>
+				<a href="#pt" onClick={() => this.changeLanguage('pt')} style={{'color':'red'}}>PT</a>
+				-
+				<a href="#en" onClick={() => this.changeLanguage('en')} style={{'color':'red'}}>EN</a>
 				{movies}
 			</Fragment>
 		)

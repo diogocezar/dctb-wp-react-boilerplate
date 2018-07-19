@@ -10,6 +10,7 @@ import './assets/styles/base.css'
 // Pages
 import Movie from './pages/Movie/Movie.js'
 import Music from './pages/Music/Music.js'
+import Form from './pages/Form/Form.js'
 
 // ServiceWorker
 import registerServiceWorker from './service-worker/registerServiceWorker'
@@ -23,12 +24,14 @@ ReactDOM.render(
                     <ul>
                         <li><Link to='/' style={{ 'color': 'red' }}>Home</Link></li>
                         <li><Link to='/musics' style={{ 'color': 'red' }}>Musics</Link></li>
+                        <li><Link to='/form' style={{ 'color': 'red' }}>Form</Link></li>
                     </ul>
                 </nav>
             </header>
             <Switch>
                 <Route exact path="/" component={Movie} />
                 <Route path="/musics" component={Music} />
+                <Route path="/form" component={Form} />
             </Switch>
         </Fragment>
     </BrowserRouter>

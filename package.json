@@ -18,6 +18,7 @@
   "dependencies": {
     "bootstrap": "^4.1.2",
     "concurrently": "^3.6.0",
+    "formik": "^1.0.1",
     "jquery": "^3.3.1",
     "jquery.mousewheel": "^3.1.9",
     "jquery.nicescroll": "^3.7.6",
@@ -29,7 +30,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "scrollreveal": "^3.4.0",
-    "svg-inline-react": "^3.1.0"
+    "svg-inline-react": "^3.1.0",
+    "yup": "^0.25.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",

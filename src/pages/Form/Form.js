@@ -7,9 +7,6 @@ import { PluginMouseWheel } from '../../plugins/plugin-mouse-wheel'
 import { PluginNiceScroll } from '../../plugins/plugin-nice-scroll'
 
 class Form extends Component {
-	constructor() {
-		super()
-	}
 	componentDidMount() {
 		this.pluginNiceScroll = new PluginNiceScroll()
 		this.pluginMouseWheel = new PluginMouseWheel()
@@ -20,9 +17,7 @@ class Form extends Component {
 			<Fragment>
 				<Formik
 					validationSchema={Yup.object().shape({
-					email: Yup.string()
-						.email('Invalid email address')
-      					.required('Email is required!'),
+						email: Yup.string().email('Invalid email address').required('Email is required!')
 					})}
 					initialValues={{
 						email: 'diogo@diogocezar.com',

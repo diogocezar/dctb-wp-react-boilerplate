@@ -16,6 +16,7 @@
   "author": "Diogo Cezar <diogo@diogocezar.com>",
   "private": false,
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.2",
     "concurrently": "^3.6.0",
     "formik": "^1.0.1",
@@ -27,8 +28,11 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-owl-carousel": "^2.3.1",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "scrollreveal": "^3.4.0",
     "svg-inline-react": "^3.1.0",
     "yup": "^0.25.1"

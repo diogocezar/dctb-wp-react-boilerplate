@@ -1,60 +1,49 @@
 import React, { Component, Fragment } from 'react'
-
-//Plugins
-import { PluginMouseWheel }     from '../../plugins/plugin-mouse-wheel'
-import { PluginNiceScroll }     from '../../plugins/plugin-nice-scroll'
+import { bindActionCreators }         from 'redux'
+import { connect }                    from 'react-redux'
+import * as MovieActions              from '../../actions/movie'
 
 class Movie extends Component {
-	constructor(){
-		super()
-		this.state = {
-			movies : []
-		}
-	}
 	componentDidMount(){
-		this.pluginNiceScroll   = new PluginNiceScroll()
-		this.pluginMouseWheel   = new PluginMouseWheel()
-		document.title          = "Movies";
-		this.getData()
+		document.title = "Movies"
+		this.props.loadMovies()
 	}
-	getData(lang){
-		let url = `http://localhost/dctb-wp-react-boilerplate/public/api/wp-json/wp/v2/movies?lang=${lang}`
-		fetch(url)
-			.then(res => res.json())
-			.then(res => {
-				this.setState({
-					movies: res
-				})
-			})
-	}
-	changeLanguage(lang){
-		this.getData(lang)
+	changeLang(lang){
+		this.props.loadMovies(lang)
 	}
 	render() {
-		let movies = this.state.movies.map((movie, i) => {
-			return(
-				<div key={i}>
-					<h2>Titile</h2>
-					<p>{movie.title.rendered}</p>
-					<h3>Release Year</h3>		
-					<p>{movie.acf.release_year}</p>
-					<h4>Ratting</h4>
-					<p>{movie.acf.ratting}</p>
-					<h4>Description</h4>
-					<p>{movie.acf.description}</p>
-					<img src={movie.acf.image}/>
-				</div>
+		if (typeof this.props.movies.data !== 'undefined' && this.props.movies.data.length > 0){
+			let movies = this.props.movies.data.map((movie, i) => {
+				return (
+					<div key={i}>
+						<h2>Titile</h2>
+						<p>{movie.title.rendered}</p>
+						<h3>Release Year</h3>
+						<p>{movie.acf.release_year}</p>
+						<h4>Ratting</h4>
+						<p>{movie.acf.ratting}</p>
+						<h4>Description</h4>
+						<p>{movie.acf.description}</p>
+						<img src={movie.acf.image} alt="testing" />
+					</div>
+				)
+			})
+			return (
+				<Fragment>
+					<button onClick={(e) => {this.changeLang('pt')}}>Português</button>
+					<button onClick={(e) => {this.changeLang('en')}}>Inglês</button>
+					{movies}
+				</Fragment>
 			)
-		})
-		return(
-			<Fragment>
-				<a onClick={() => this.changeLanguage('pt')} style={{'color':'red'}}>PT</a>
-				-
-				<a onClick={() => this.changeLanguage('en')} style={{'color':'red'}}>EN</a>
-				{movies}
-			</Fragment>
-		)
+		}
+		else{
+			return(
+				<h1>Carregando</h1>
+			)
+		}
 	}
 }
 
-export default Movie
+const mapStateToProps    = state => state
+const mapDispatchToProps = dispatch => bindActionCreators(MovieActions, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(Movie)

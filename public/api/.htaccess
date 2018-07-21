@@ -8,5 +8,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /dctb-wp-react-boilerplate/public/api/index.php [L]
 </IfModule>
-
 # END WordPress

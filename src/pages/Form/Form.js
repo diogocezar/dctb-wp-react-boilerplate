@@ -1,16 +1,11 @@
 import React, { Component, Fragment } from 'react'
-import { Formik } from 'formik';
-import * as Yup from 'yup';
-
-//Plugins
-import { PluginMouseWheel } from '../../plugins/plugin-mouse-wheel'
-import { PluginNiceScroll } from '../../plugins/plugin-nice-scroll'
+import { Formik } from 'formik'
+import * as Yup from 'yup'
+import axios from 'axios'
 
 class Form extends Component {
 	componentDidMount() {
-		this.pluginNiceScroll = new PluginNiceScroll()
-		this.pluginMouseWheel = new PluginMouseWheel()
-		document.title        = "Form";
+		document.title = "Form";
 	}
 	render() {
 		return (
@@ -23,10 +18,16 @@ class Form extends Component {
 						email: 'diogo@diogocezar.com',
 					}}
 					onSubmit={(values, actions) => {
-						setTimeout(() => {
-							console.log(JSON.stringify(values, null, 2))
+						const url = 'http://localhost/dctb-wp-react-boilerplate/public/api/wp-admin/admin-ajax.php?action=send_contact'
+						axios.post(
+							url,
+							values,
+							{ headers: {'Content-Type': 'application/x-www-form-urlencoded' }}
+						)
+						.then((response) =>{
 							actions.setSubmitting(false)
-						}, 1000)
+							console.log(response)
+						})
 					}}
 					render={({ values, touched, errors, dirty, isSubmitting, handleSubmit, handleChange, handleBlur, handleReset  }) => (
 						<form onSubmit={handleSubmit}>

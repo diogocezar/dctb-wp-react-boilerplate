@@ -1,0 +1,119 @@
+# Translation of Plugins - ACF to REST API - Stable (latest release) in Portuguese (Brazil)
+# This file is distributed under the same license as the Plugins - ACF to REST API - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-07-06 14:10:32+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: pt_BR\n"
+"Project-Id-Version: Plugins - ACF to REST API - Stable (latest release)\n"
+
+#: v3/lib/class-acf-to-rest-api-acf-field-settings.php:57
+#: v3/lib/class-acf-to-rest-api-acf-field-settings.php:94
+msgid "No"
+msgstr "Não"
+
+#: v3/lib/class-acf-to-rest-api-acf-field-settings.php:56
+#: v3/lib/class-acf-to-rest-api-acf-field-settings.php:93
+msgid "Yes"
+msgstr "Sim"
+
+#: v3/lib/class-acf-to-rest-api-acf-field-settings.php:32
+#: v3/lib/class-acf-to-rest-api-acf-field-settings.php:43
+msgid "Edit in REST API?"
+msgstr "Editar API REST"
+
+#: v3/lib/class-acf-to-rest-api-acf-field-settings.php:69
+#: v3/lib/class-acf-to-rest-api-acf-field-settings.php:80
+msgid "Show in REST API?"
+msgstr "Mostrar em API REST"
+
+#: shared/lib/class-acf-to-rest-api-settings.php:73
+msgid "Request Version"
+msgstr "Solicitar versão"
+
+#: shared/lib/class-acf-to-rest-api-settings.php:43
+msgid "Settings"
+msgstr "Configurações"
+
+#: shared/includes/admin/views/html-settings-field.php:15
+msgid "Click here"
+msgstr "Clique aqui"
+
+#: shared/includes/admin/views/html-notice-missing-acf.php:13
+#: shared/includes/admin/views/html-notice-missing-rest-api.php:13
+msgid "Active"
+msgstr "Ativo"
+
+#: shared/includes/admin/views/html-notice-missing-acf.php:10
+#: shared/includes/admin/views/html-notice-missing-rest-api.php:10
+msgid "Install"
+msgstr "Instalar"
+
+#: legacy/v2/lib/endpoints/class-acf-to-rest-api-controller.php:90
+#: v3/lib/endpoints/class-acf-to-rest-api-controller.php:134
+msgid "Cannot update item"
+msgstr "Não é possível atualizar o item"
+
+#: shared/includes/admin/views/html-settings-field.php:15
+msgid "to make a donation and help to improve the plugin."
+msgstr "Fazer uma doação e ajudar a melhorar o plugin"
+
+#. Author URI of the plugin/theme
+msgid "http://github.com/airesvsg"
+msgstr "http://github.com/airesvsg"
+
+#. Author of the plugin/theme
+msgid "Aires Gonçalves"
+msgstr "Aires Gonçalves"
+
+#. Plugin URI of the plugin/theme
+msgid "http://github.com/airesvsg/acf-to-rest-api"
+msgstr "http://github.com/airesvsg/acf-to-rest-api"
+
+#. #-#-#-#-#  acf-to-rest-api-code.pot (ACF to REST API 3.1.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: shared/includes/admin/views/html-notice-missing-acf.php:26
+#: shared/includes/admin/views/html-notice-missing-rest-api.php:26
+#: shared/lib/class-acf-to-rest-api-settings.php:66
+msgid "ACF to REST API"
+msgstr "ACF to REST API"
+
+#: shared/lib/class-acf-to-rest-api-settings.php:57
+msgid "Make a donation"
+msgstr "Faça uma doação"
+
+#: shared/includes/admin/views/html-notice-missing-rest-api.php:26
+msgid "depends on the last version of WordPress REST API to work!"
+msgstr "depende da última versão do WordPress REST API para funcionar!"
+
+#: shared/includes/admin/views/html-notice-missing-acf.php:26
+msgid "depends on the last version of Advanced Custom Fields to work!"
+msgstr "depende da última versão do plugin Advanced Custom Fields para funcionar!"
+
+#: legacy/v2/lib/endpoints/class-acf-to-rest-api-term-controller.php:29
+msgid "No route was found matching the URL and request method"
+msgstr "Nenhuma rota foi encontrada com a URL e método de requisição"
+
+#: shared/includes/admin/views/html-settings-section.php:8
+msgid "Choose your request api version"
+msgstr "Escolha sua versão de requisição da API"
+
+#: v3/lib/endpoints/class-acf-to-rest-api-controller.php:83
+msgid "Cannot get items"
+msgstr "Não foi possível obter os itens"
+
+#: shared/lib/class-acf-to-rest-api-settings.php:56
+msgid "Fork me on GitHub"
+msgstr "Contribua no GitHub"
+
+#: v3/lib/endpoints/class-acf-to-rest-api-controller.php:55
+msgid "Expose advanced custom fields."
+msgstr "Mostrar campos do ACF."
+
+#. Description of the plugin/theme
+msgid "Exposes Advanced Custom Fields Endpoints in the WordPress REST API"
+msgstr "Mostrar campos do ACF no WordPress REST API"

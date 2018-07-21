@@ -17,7 +17,7 @@
             $GLOBALS['text_direction'] = $polylang->curlang->is_rtl ? 'rtl' : 'ltr';
         }
         public function send_contact(){
-            $this->normalizePost();
+            //$this->normalizePost();
             if(empty($_POST))
                 die(json_encode(array('error' => 'Empty fields.')));
             else{

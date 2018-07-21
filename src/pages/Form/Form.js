@@ -15,7 +15,12 @@ class Form extends Component {
 		document.title = "Form";
 	}
 	sendForm = (values, actions) =>{
-		axios.post(this.state.endpoint,	values, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
+		let data = new FormData()
+		let file = document.querySelector('#file')
+		data.append('file', file.files[0])
+		data.append('email', values.email)
+		// 'Content-type': 'application/x-www-form-urlencoded'
+		axios.post(this.state.endpoint, data, { headers: { 'Content-Type': 'multipart/form-data' }})
 		.then((response) => {
 			actions.setSubmitting(false)
 			this.setState({ success : true })
@@ -34,11 +39,11 @@ class Form extends Component {
 		return (
 			<Fragment>
 				<Formik
-					validationSchema = { this.validation() }
-					initialValues    = {{email: 'diogo@diogocezar.com'}}
+					validationSchema = {this.validation()}
+					initialValues    = {{email: 'diogo@diogocezar.com', file: ''}}
 					onSubmit         = {(values, actions) => { this.sendForm(values, actions)}}
 					render           = {({ values, touched, errors, dirty, isSubmitting, handleSubmit, handleChange, handleBlur, handleReset }) => (
-						<form onSubmit={handleSubmit}>
+						<form onSubmit={handleSubmit} encType="multipart/form-data">
 							<label htmlFor="email" style={{ display: 'block' }}>Email</label>
 							<input
 								id="email"
@@ -48,6 +53,13 @@ class Form extends Component {
 								onChange={handleChange}
 								onBlur={handleBlur}
 								className={errors.email && touched.email ? 'text-input error' : 'text-input'}
+							/>
+							<input
+								id="file"
+								type="file"
+								value={values.file}
+								onChange={handleChange}
+								onBlur={handleBlur}
 							/>
 							{errors.email && touched.email && <div className="input-feedback">{errors.email}</div>}
 							<br/>

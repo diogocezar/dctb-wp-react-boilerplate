@@ -1,9 +1,9 @@
-import axios from 'axios'
+import axios         from 'axios'
+import { endpoints } from '../config'
 
 export function loadMovies(lang = 'pt') {
-    const url = `http://localhost/dctb-wp-react-boilerplate/public/api/wp-json/wp/v2/movies?lang=${lang}`
     return (dispatch) => {
-        return axios.get(url).then((response) => {
+        return axios.get(`${endpoints['movies']}?lang=${lang}`).then((response) => {
             dispatch(getMovies(response.data));
         })
     }

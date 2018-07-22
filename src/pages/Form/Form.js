@@ -2,12 +2,13 @@ import React, { Component, Fragment } from 'react'
 import { Formik }                     from 'formik'
 import * as Yup                       from 'yup'
 import axios                          from 'axios'
+import { ajax }                       from '../../config'
 
 class Form extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			endpoint : 'http://localhost/dctb-wp-react-boilerplate/public/api/wp-admin/admin-ajax.php?action=send_contact',
+			endpoint : `${ajax['form']}`,
 			success  : null
 		}
 	}

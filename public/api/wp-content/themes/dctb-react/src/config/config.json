@@ -1,0 +1,56 @@
+{
+	"config": {
+		"send-file" : {
+			"quality"      : "80",
+			"max-size"     : "3000000",
+			"not-attached" : "Nenhum arquivo anexado.",
+			"invalid-dir"  : "O diretório indicado para o upload é inválido.",
+			"incomplete"   : "O arquivo enviado está incompleto.",
+			"invalid-ext"  : "As extensões permitidas são: zip, rar ou pdf.",
+			"invalid-size" : "O arquivo deve possuir no máximo 3MB.",
+			"allowed-ext"  : [".zip", ".rar", ".pdf"],
+			"success"      : "Arquivo enviado com sucesso.",
+			"error"        : "Desculpe, o arquivo não pode ser enviado."
+		},
+		"send-mail": {
+			"type": "phpmailer",
+			"configs" : {
+				"mailgun" : {
+					"mg_key" : "",
+					"mg_domain" : ""
+				},
+				"sendgrid" : {
+					"sg_key": ""
+				},
+				"phpmailer" : {
+					"pm_debug"    : "0",
+					"pm_is_smtp"  : "true",
+					"pm_host"     : "smtp.gmail.com",
+					"pm_port"     : "587",
+					"pm_secure"   : "tls",
+					"pm_auth"     : "true",
+					"pm_user"     : "",
+					"pm_char_set" : "UTF-8",
+					"pm_pass"     : ""
+				}
+			},
+			"from": "xgordo@gmail.com",
+			"name": "diogo",
+			"to": {
+				"contact": {
+					"xgordo@gmail.com" : "diogo"
+				}
+			},
+			"title": "teste",
+			"success": "Email enviado com sucesso.",
+			"error": "Desculpe, o email não pode ser enviado.",
+			"templates": {
+				"contact": "src/templates/contact.html"
+			}
+		},
+		"send-db" : {
+			"success": "Dados armazenados com sucesso.",
+			"error": "Desculpe, não foi possível armazenar os dados."
+		}
+	}
+}

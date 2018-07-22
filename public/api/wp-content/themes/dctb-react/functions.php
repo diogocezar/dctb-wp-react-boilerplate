@@ -1,6 +1,5 @@
   <?php
   	/**
-	* 	Functions
 	* 	Functions to configure template
 	* 	Author: Diogo Cezar <diogo@diogocezar.com>
 	*	Year: 2018

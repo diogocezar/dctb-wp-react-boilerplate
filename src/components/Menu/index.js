@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 class Menu extends Component {
@@ -15,8 +15,8 @@ class Menu extends Component {
                     </nav>
                 </header>
             </Fragment>
-        );
+        )
     }
 }
 
-export default Menu;
+export default Menu

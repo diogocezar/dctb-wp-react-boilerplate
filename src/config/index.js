@@ -9,9 +9,9 @@ const urlAjax     = `${protocol}${host}/${pathAjax}?action=`
 
 export const endpoints = {
     'movies': `${urlEndpoint}movies`,
-    'musics': `${urlEndpoint}musics`,
+    'musics': `${urlEndpoint}musics`
 }
 
 export const ajax = {
-    'form': `${urlAjax}send_contact`,
+    'form': `${urlAjax}send_contact`
 }
